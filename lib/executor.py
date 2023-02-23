@@ -177,7 +177,7 @@ class Executor:
                         # For Presto, we need to define temporary schema
                         if self.database_type == 'presto':
                             unique_key = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
-                            self.tmp_tables[etl_name]['table'] = "{c}.dps_presto_etl_poc_dm_csi_pii.{t}__{k}".format(
+                            self.tmp_tables[etl_name]['table'] = "{c}.schema.{t}__{k}".format(
                                 c=self.database_catalog, t=etl_name, k=unique_key)
                         sql = exe.gen_etl_tmp(self.tmp_tables[etl_name]['table'], etl_sql)
                     elif etl_name.startswith("stg"):
