@@ -9,12 +9,6 @@ class ExecutorForPresto(Presto):
         # Presto bucket/catalog
         self.catalog = catalog
 
-        # Define S3 location based on catalog
-        #if self.catalog == 'analytics':
-        #    self.s3_path = 's3://upwork-usw1-prod-analytics-datalake-confidential/release/analytics'
-        #else:
-        #    self.s3_path = 's3://upwork-uw1-production-dps-datalake/transform/dps/presto'
-
         # Print SQLs only if enabled
         self.is_dry_run = is_dry_run
 
